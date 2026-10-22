@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>燕园求职日历 · 北大宣讲会 / 招聘 / 实习</title>
+<meta name="description" content="北京大学宣讲会、招聘与实习信息聚合页，支持按时间、类型、领域筛选，自动同步自北大就业网公开信息。" />
+<meta name="theme-color" content="#7d1519" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="燕园求职日历 · 北大宣讲会 / 招聘 / 实习" />
+<meta property="og:description" content="一页看完北大近期宣讲会、招聘与实习信息，支持筛选、收藏和日历导出。" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%237d1519'/><text x='32' y='44' font-size='34' text-anchor='middle' fill='%23f3e6c8' font-family='serif'>燕</text></svg>" />
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-pattern" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-top">
+      <div class="brand">
+        <div class="seal" aria-hidden="true">燕</div>
+        <div class="brand-text">
+          <h1>燕园求职日历</h1>
+          <p>北大宣讲会 · 招聘 · 实习，一页看完</p>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <button class="ghost-btn" id="shareBtn" type="button">
+          <span class="ico" data-icon="share"></span>分享给同学
+        </button>
+        <button class="ghost-btn" id="prefsBtn" type="button">
+          <span class="ico" data-icon="spark"></span>我的关注
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-stats" id="heroStats">
+      <div class="stat"><b>—</b><span>未来 7 天宣讲会</span></div>
+      <div class="stat"><b>—</b><span>在招职位</span></div>
+      <div class="stat"><b>—</b><span>今日安排</span></div>
+      <div class="stat stat-note"><b id="updatedAt">—</b><span>最近同步</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="toolbar" id="toolbar">
+  <div class="toolbar-inner">
+    <div class="search-row">
+      <label class="search-box">
+        <span class="ico" data-icon="search" aria-hidden="true"></span>
+        <input id="searchInput" type="search" placeholder="搜公司、职位、地点，如「腾讯」「算法」「英杰」" autocomplete="off" />
+        <button class="search-clear" id="searchClear" type="button" aria-label="清空搜索" hidden>×</button>
+      </label>
+      <div class="seg" id="typeSeg" role="tablist" aria-label="信息类型">
+        <button type="button" data-type="all" class="active" role="tab">全部</button>
+        <button type="button" data-type="fair" role="tab">宣讲会</button>
+        <button type="button" data-type="job" role="tab">招聘</button>
+        <button type="button" data-type="internship" role="tab">实习</button>
+      </div>
+    </div>
+
+    <div class="filter-row">
+      <div class="range-group" id="rangeGroup" aria-label="时间范围">
+        <button type="button" data-range="all" class="chip active">全部时间</button>
+        <button type="button" data-range="today" class="chip">今天</button>
+        <button type="button" data-range="7d" class="chip">未来 7 天</button>
+        <button type="button" data-range="30d" class="chip">未来 30 天</button>
+        <button type="button" data-range="soon" class="chip">3 天内</button>
+      </div>
+
+      <div class="filter-tools">
+        <select id="natureSelect" aria-label="单位性质">
+          <option value="">全部单位性质</option>
+        </select>
+        <select id="fnSelect" aria-label="职能">
+          <option value="">全部职能</option>
+        </select>
+        <select id="cohortSelect" aria-label="届别或年份">
+          <option value="">全部届别 / 年份</option>
+        </select>
+        <select id="citySelect" aria-label="城市">
+          <option value="">全部城市</option>
+        </select>
+        <select id="sortSelect" aria-label="排序方式">
+          <option value="time">按时间最近</option>
+          <option value="new">最新发布</option>
+          <option value="deadline">截止最早</option>
+        </select>
+        <button type="button" class="chip chip-toggle" id="favToggle">
+          <span class="ico" data-icon="star"></span>只看收藏
+        </button>
+        <button type="button" class="chip chip-toggle" id="mineToggle">
+          <span class="ico" data-icon="spark"></span>适合我的
+        </button>
+        <button type="button" class="chip chip-action" id="icsBtn">
+          <span class="ico" data-icon="calendar"></span>导出日历
+        </button>
+      </div>
+    </div>
+
+    <div class="tag-row dir-row">
+      <span class="tag-label">方向</span>
+      <div class="tag-scroll" id="dirList"></div>
+    </div>
+
+    <div class="tag-row">
+      <span class="tag-label">标签</span>
+      <div class="tag-scroll" id="tagList"></div>
+      <button type="button" class="reset-btn" id="resetBtn" hidden>清空筛选</button>
+    </div>
+  </div>
+</div>
+
+<main class="layout">
+  <section class="list-panel">
+    <div class="list-head">
+      <div>
+        <h2 id="resultTitle">正在加载…</h2>
+        <p id="resultSub" class="muted">数据来自北大就业网公开列表</p>
+      </div>
+      <div class="list-head-right">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span id="syncLabel" class="muted">自动同步</span>
+      </div>
+    </div>
+
+    <div id="activeFilters" class="active-filters" hidden></div>
+
+    <div id="list" class="list" aria-live="polite">
+      <div class="skeleton">
+        <div class="sk-card"></div><div class="sk-card"></div><div class="sk-card"></div><div class="sk-card"></div>
+      </div>
+    </div>
+
+    <button class="load-more" id="loadMore" type="button" hidden>加载更多</button>
+
+    <div class="empty" id="emptyState" hidden>
+      <div class="empty-mark">燕</div>
+      <h3>没有找到符合条件的安排</h3>
+      <p>试试放宽时间范围，或清空搜索词与领域筛选。</p>
+      <button class="primary-btn" id="emptyReset" type="button">清空全部筛选</button>
+    </div>
+  </section>
+
+  <aside class="sidebar">
+    <section class="panel panel-prefs">
+      <div class="panel-head">
+        <h3>我的关注</h3>
+        <button class="link-btn" id="editPrefs" type="button">编辑</button>
+      </div>
+      <div id="prefsSummary" class="prefs-strip"></div>
+    </section>
+
+    <section class="panel panel-agenda">
+      <div class="panel-head">
+        <h3>我的日程 <span class="agenda-count" id="agendaCount">0</span></h3>
+        <button class="link-btn" id="openAgenda" type="button">查看</button>
+      </div>
+      <div id="agendaPreview" class="agenda-preview"></div>
+      <div class="agenda-foot" id="agendaFoot">
+        <span id="agendaConflict" class="agenda-conflict" hidden></span>
+        <button class="chip" id="agendaIcsBtn" type="button">导出 .ics</button>
+      </div>
+    </section>
+
+    <section class="panel panel-week">
+      <div class="panel-head">
+        <h3>未来 7 天日程</h3>
+      </div>
+      <div class="week-cal" id="weekStrip" aria-label="未来七天已加入日程"></div>
+    </section>
+
+    <section class="panel panel-about">
+      <div class="panel-head"><h3>关于这份日历</h3></div>
+      <ul class="about-list">
+        <li><span>数据来源</span><a href="https://scc.pku.edu.cn/" target="_blank" rel="noopener">北大就业信息网</a></li>
+        <li><span>更新时间</span><b id="aboutUpdated">—</b></li>
+        <li><span>当前收录</span><b id="aboutCount">—</b></li>
+      </ul>
+      <p class="panel-hint">非官方页面，由同学整理，信息请以就业网原文为准。发现遗漏或错误，欢迎直接改数据或提 issue。</p>
+    </section>
+  </aside>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><span class="seal seal-sm">燕</span><span>燕园求职日历</span></div>
+    <p>数据自动同步自 <a href="https://scc.pku.edu.cn/" target="_blank" rel="noopener">scc.pku.edu.cn</a> 的公开列表，仅供同学参考，不替代官方通知。</p>
+  </div>
+</footer>
+
+<div class="modal" id="prefsModal" hidden>
+  <div class="modal-backdrop" data-close="1"></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="prefsTitle">
+    <div class="modal-head">
+      <h3 id="prefsTitle">设置我的关注</h3>
+      <button class="icon-btn" type="button" data-close="1" aria-label="关闭">×</button>
+    </div>
+    <p class="modal-desc">命中任意关键词或标签，就算「适合我的」。留空则不会过滤。</p>
+    <div class="field">
+      <span>快速套用方向</span>
+      <div class="prefs-tags" id="prefsPresets"></div>
+      <small>点一下自动填入该方向的关键词和标签，保存前可继续调整。</small>
+    </div>
+    <label class="field">
+      <span>关键词</span>
+      <input id="kwInput" type="text" placeholder="用逗号分隔，如：算法, 产品经理, 国企, 北京" />
+      <small>会匹配职位标题、公司名、地点和标签。</small>
+    </label>
+    <div class="field">
+      <span>关注标签</span>
+      <div class="prefs-tags" id="prefsTags"></div>
+    </div>
+    <div class="modal-actions">
+      <button class="link-btn" type="button" id="clearPrefs">清空</button>
+      <div class="spacer"></div>
+      <button class="secondary-btn" type="button" data-close="1">取消</button>
+      <button class="primary-btn" type="button" id="savePrefs">保存</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="agendaModal" hidden>
+  <div class="modal-backdrop" data-close="1"></div>
+  <div class="modal-card agenda-card" role="dialog" aria-modal="true" aria-labelledby="agendaTitle">
+    <div class="modal-head">
+      <h3 id="agendaTitle">我的日程</h3>
+      <span id="agendaConflictTop" class="agenda-conflict" hidden></span>
+      <button class="icon-btn" type="button" data-close="1" aria-label="关闭">×</button>
+    </div>
+    <p class="modal-desc">点左侧任意一条查看详情；时间重叠或同日截止会在这里标出来。</p>
+    <div class="agenda-split">
+      <div class="agenda-list" id="agendaList"></div>
+      <div class="agenda-detail" id="agendaDetail"></div>
+    </div>
+    <div class="modal-actions">
+      <button class="link-btn" type="button" id="clearAgenda">清空日程</button>
+      <div class="spacer"></div>
+      <button class="secondary-btn" type="button" data-close="1">关闭</button>
+      <button class="primary-btn" type="button" id="agendaIcsBtn2">导出 .ics</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="conflictModal" hidden>
+  <div class="modal-backdrop" data-close="1"></div>
+  <div class="modal-card conflict-card" role="dialog" aria-modal="true" aria-labelledby="conflictTitle">
+    <div class="modal-head">
+      <h3 id="conflictTitle">时间冲突</h3>
+      <button class="icon-btn" type="button" data-close="1" aria-label="关闭">×</button>
+    </div>
+    <p class="modal-desc" id="conflictDesc"></p>
+    <div class="conflict-list" id="conflictList"></div>
+    <div class="modal-actions">
+      <div class="spacer"></div>
+      <button class="secondary-btn" type="button" data-close="1">取消</button>
+      <button class="primary-btn" type="button" id="conflictConfirm">仍然加入</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
