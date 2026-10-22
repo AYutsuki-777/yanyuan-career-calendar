@@ -1,0 +1,17 @@
+{
+  "name": "yanyuan-career-calendar",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "北大宣讲会 / 招聘 / 实习信息聚合页，自动同步自就业网公开列表",
+  "scripts": {
+    "dev": "node scripts/server.mjs",
+    "update": "node scripts/update.mjs",
+    "update:full": "node scripts/update.mjs --full",
+    "enrich": "node scripts/update.mjs --enrich",
+    "preview": "node scripts/server.mjs"
+  },
+  "engines": {
+    "node": ">=20.11"
+  }
+}
