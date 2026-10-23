@@ -21,25 +21,36 @@
       <div class="brand">
         <div class="seal" aria-hidden="true">燕</div>
         <div class="brand-text">
-          <h1>燕园求职日历</h1>
-          <p>北大宣讲会 · 招聘 · 实习，一页看完</p>
+          <h1 data-zh="燕园求职日历" data-en="Yanyuan Career Calendar">燕园求职日历</h1>
+          <p data-zh="北大宣讲会 · 招聘 · 实习，一页看完" data-en="PKU career talks, jobs and internships in one place">北大宣讲会 · 招聘 · 实习，一页看完</p>
         </div>
       </div>
       <div class="hero-actions">
+        <button class="ghost-btn lang-btn" id="langToggle" type="button" aria-label="Switch to English" title="Switch to English">
+          <span class="ico" data-icon="globe"></span><span id="langToggleLabel">EN</span>
+        </button>
         <button class="ghost-btn" id="shareBtn" type="button">
-          <span class="ico" data-icon="share"></span>分享给同学
+          <span class="ico" data-icon="share"></span><span data-zh="分享给同学" data-en="Share">分享给同学</span>
         </button>
         <button class="ghost-btn" id="prefsBtn" type="button">
-          <span class="ico" data-icon="spark"></span>我的关注
+          <span class="ico" data-icon="spark"></span><span data-zh="我的关注" data-en="My interests">我的关注</span>
         </button>
       </div>
     </div>
 
     <div class="hero-stats" id="heroStats">
-      <div class="stat"><b>—</b><span>未来 7 天宣讲会</span></div>
-      <div class="stat"><b>—</b><span>在招职位</span></div>
-      <div class="stat"><b>—</b><span>今日安排</span></div>
-      <div class="stat stat-note"><b id="updatedAt">—</b><span>最近同步</span></div>
+      <div class="stat" data-zh-title="含今天；宣讲会按开始日期，招聘/实习按截止日期统计" data-en-title="Includes today; talks by start date, jobs/internships by deadline">
+        <b>—</b>
+        <span data-zh="未来 7 天" data-en="Next 7 days">未来 7 天</span>
+        <small class="stat-sub" id="next7Breakdown">—</small>
+      </div>
+      <div class="stat"><b>—</b><span data-zh="收录总数" data-en="Total listings">收录总数</span></div>
+      <div class="stat" data-zh-title="今天还没结束的宣讲会 + 今天截止的招聘/实习" data-en-title="Talks still on today + jobs/internships due today">
+        <b>—</b>
+        <span data-zh="今日安排" data-en="Today">今日安排</span>
+        <small class="stat-sub" id="todayBreakdown">—</small>
+      </div>
+      <div class="stat stat-note"><b id="updatedAt">—</b><span data-zh="最近同步" data-en="Last synced">最近同步</span></div>
     </div>
   </div>
 </header>
@@ -49,10 +60,10 @@
     <div class="search-row">
       <label class="search-box">
         <span class="ico" data-icon="search" aria-hidden="true"></span>
-        <input id="searchInput" type="search" placeholder="搜公司、职位、地点，如「腾讯」「算法」「英杰」" autocomplete="off" />
-        <button class="search-clear" id="searchClear" type="button" aria-label="清空搜索" hidden>×</button>
+        <input id="searchInput" type="search" data-zh-placeholder="搜公司、职位、地点，如「腾讯」「算法」「英杰」" data-en-placeholder="Search company, role or location, e.g. Tencent, algorithm, Yingjie" placeholder="搜公司、职位、地点，如「腾讯」「算法」「英杰」" autocomplete="off" />
+        <button class="search-clear" id="searchClear" type="button" data-zh-aria="清空搜索" data-en-aria="Clear search" aria-label="清空搜索" hidden>×</button>
       </label>
-      <div class="seg" id="typeSeg" role="tablist" aria-label="信息类型">
+      <div class="seg" id="typeSeg" role="tablist" data-zh-aria="信息类型" data-en-aria="Listing type" aria-label="信息类型">
         <button type="button" data-type="all" class="active" role="tab">全部</button>
         <button type="button" data-type="fair" role="tab">宣讲会</button>
         <button type="button" data-type="job" role="tab">招聘</button>
@@ -61,53 +72,48 @@
     </div>
 
     <div class="filter-row">
-      <div class="range-group" id="rangeGroup" aria-label="时间范围">
-        <button type="button" data-range="all" class="chip active">全部时间</button>
-        <button type="button" data-range="today" class="chip">今天</button>
-        <button type="button" data-range="7d" class="chip">未来 7 天</button>
-        <button type="button" data-range="30d" class="chip">未来 30 天</button>
-        <button type="button" data-range="soon" class="chip">3 天内</button>
+      <div class="range-group" id="rangeGroup" data-zh-aria="时间范围" data-en-aria="Time range" aria-label="时间范围">
+        <button type="button" data-range="all" class="chip active" data-zh="全部时间" data-en="All time">全部时间</button>
+        <button type="button" data-range="today" class="chip" data-zh="今天" data-en="Today">今天</button>
+        <button type="button" data-range="7d" class="chip" data-zh="未来 7 天" data-en="Next 7 days">未来 7 天</button>
+        <button type="button" data-range="30d" class="chip" data-zh="未来 30 天" data-en="Next 30 days">未来 30 天</button>
+        <button type="button" data-range="soon" class="chip" data-zh="3 天内" data-en="Within 3 days">3 天内</button>
       </div>
 
       <div class="filter-tools">
-        <select id="natureSelect" aria-label="单位性质">
-          <option value="">全部单位性质</option>
+        <select id="natureSelect" data-zh-aria="单位性质" data-en-aria="Organization type" aria-label="单位性质">
+          <option value="" data-zh="全部单位性质" data-en="All organization types">全部单位性质</option>
         </select>
-        <select id="fnSelect" aria-label="职能">
-          <option value="">全部职能</option>
+        <select id="fnSelect" data-zh-aria="职能" data-en-aria="Function" aria-label="职能">
+          <option value="" data-zh="全部职能" data-en="All functions">全部职能</option>
         </select>
-        <select id="cohortSelect" aria-label="届别或年份">
-          <option value="">全部届别 / 年份</option>
+        <select id="cohortSelect" data-zh-aria="年份" data-en-aria="Year" aria-label="年份">
+          <option value="" data-zh="全部年份" data-en="All years">全部年份</option>
         </select>
-        <select id="citySelect" aria-label="城市">
-          <option value="">全部城市</option>
+        <select id="citySelect" data-zh-aria="城市" data-en-aria="City" aria-label="城市">
+          <option value="" data-zh="全部城市" data-en="All cities">全部城市</option>
         </select>
-        <select id="sortSelect" aria-label="排序方式">
-          <option value="time">按时间最近</option>
-          <option value="new">最新发布</option>
-          <option value="deadline">截止最早</option>
+        <select id="sortSelect" data-zh-aria="排序方式" data-en-aria="Sort by" aria-label="排序方式">
+          <option value="time" data-zh="按时间最近" data-en="Soonest first">按时间最近</option>
+          <option value="new" data-zh="最新发布" data-en="Newest posted">最新发布</option>
+          <option value="deadline" data-zh="截止最早" data-en="Earliest deadline">截止最早</option>
         </select>
         <button type="button" class="chip chip-toggle" id="favToggle">
-          <span class="ico" data-icon="star"></span>只看收藏
+          <span class="ico" data-icon="star"></span><span data-zh="只看收藏" data-en="Starred only">只看收藏</span>
         </button>
         <button type="button" class="chip chip-toggle" id="mineToggle">
-          <span class="ico" data-icon="spark"></span>适合我的
+          <span class="ico" data-icon="spark"></span><span data-zh="适合我的" data-en="For me">适合我的</span>
         </button>
         <button type="button" class="chip chip-action" id="icsBtn">
-          <span class="ico" data-icon="calendar"></span>导出日历
+          <span class="ico" data-icon="calendar"></span><span data-zh="导出日历" data-en="Export calendar">导出日历</span>
         </button>
       </div>
     </div>
 
-    <div class="tag-row dir-row">
-      <span class="tag-label">方向</span>
-      <div class="tag-scroll" id="dirList"></div>
-    </div>
-
-    <div class="tag-row">
-      <span class="tag-label">标签</span>
-      <div class="tag-scroll" id="tagList"></div>
-      <button type="button" class="reset-btn" id="resetBtn" hidden>清空筛选</button>
+    <div class="tag-row quick-row">
+      <span class="tag-label" data-zh="方向" data-en="Direction">方向</span>
+      <div class="tag-scroll" id="quickList"></div>
+      <button type="button" class="reset-btn" id="resetBtn" data-zh="清空筛选" data-en="Clear filters" hidden>清空筛选</button>
     </div>
   </div>
 </div>
@@ -116,12 +122,12 @@
   <section class="list-panel">
     <div class="list-head">
       <div>
-        <h2 id="resultTitle">正在加载…</h2>
-        <p id="resultSub" class="muted">数据来自北大就业网公开列表</p>
+        <h2 id="resultTitle" data-zh="正在加载…" data-en="Loading…">正在加载…</h2>
+        <p id="resultSub" class="muted" data-zh="数据来自北大就业网公开列表" data-en="Public listings from PKU Career Center">数据来自北大就业网公开列表</p>
       </div>
       <div class="list-head-right">
         <span class="live-dot" aria-hidden="true"></span>
-        <span id="syncLabel" class="muted">自动同步</span>
+        <span id="syncLabel" class="muted" data-zh="自动同步" data-en="Auto sync">自动同步</span>
       </div>
     </div>
 
@@ -133,60 +139,63 @@
       </div>
     </div>
 
-    <button class="load-more" id="loadMore" type="button" hidden>加载更多</button>
+    <button class="load-more" id="loadMore" type="button" data-zh="加载更多" data-en="Load more" hidden>加载更多</button>
 
     <div class="empty" id="emptyState" hidden>
       <div class="empty-mark">燕</div>
-      <h3>没有找到符合条件的安排</h3>
-      <p>试试放宽时间范围，或清空搜索词与领域筛选。</p>
-      <button class="primary-btn" id="emptyReset" type="button">清空全部筛选</button>
+      <h3 data-zh="没有找到符合条件的安排" data-en="No matching listings">没有找到符合条件的安排</h3>
+      <p data-zh="试试放宽时间范围，或清空搜索词与领域筛选。" data-en="Try a wider time range, or clear the search and filters.">试试放宽时间范围，或清空搜索词与领域筛选。</p>
+      <button class="primary-btn" id="emptyReset" type="button" data-zh="清空全部筛选" data-en="Clear all filters">清空全部筛选</button>
     </div>
   </section>
 
   <aside class="sidebar">
     <section class="panel panel-prefs">
       <div class="panel-head">
-        <h3>我的关注</h3>
-        <button class="link-btn" id="editPrefs" type="button">编辑</button>
+        <h3 data-zh="我的关注" data-en="My interests">我的关注</h3>
+        <button class="link-btn" id="editPrefs" type="button" data-zh="编辑" data-en="Edit">编辑</button>
       </div>
       <div id="prefsSummary" class="prefs-strip"></div>
     </section>
 
+    <section class="panel panel-week">
+      <div class="panel-head">
+        <h3 data-zh="未来 7 天日程" data-en="Next 7 days">未来 7 天日程</h3>
+      </div>
+      <div class="week-cal" id="weekStrip" data-zh-aria="未来七天已加入日程" data-en-aria="Scheduled items in the next seven days" aria-label="未来七天已加入日程"></div>
+    </section>
+
     <section class="panel panel-agenda">
       <div class="panel-head">
-        <h3>我的日程 <span class="agenda-count" id="agendaCount">0</span></h3>
-        <button class="link-btn" id="openAgenda" type="button">查看</button>
+        <h3><span data-zh="我的日程" data-en="My schedule">我的日程</span> <span class="agenda-count" id="agendaCount">0</span></h3>
+        <button class="link-btn" id="openAgenda" type="button" data-zh="查看" data-en="View">查看</button>
       </div>
       <div id="agendaPreview" class="agenda-preview"></div>
       <div class="agenda-foot" id="agendaFoot">
         <span id="agendaConflict" class="agenda-conflict" hidden></span>
-        <button class="chip" id="agendaIcsBtn" type="button">导出 .ics</button>
+        <button class="chip" id="agendaIcsBtn" type="button" data-zh="导出 .ics" data-en="Export .ics">导出 .ics</button>
       </div>
-    </section>
-
-    <section class="panel panel-week">
-      <div class="panel-head">
-        <h3>未来 7 天日程</h3>
-      </div>
-      <div class="week-cal" id="weekStrip" aria-label="未来七天已加入日程"></div>
     </section>
 
     <section class="panel panel-about">
-      <div class="panel-head"><h3>关于这份日历</h3></div>
+      <div class="panel-head"><h3 data-zh="关于这份日历" data-en="About this calendar">关于这份日历</h3></div>
       <ul class="about-list">
-        <li><span>数据来源</span><a href="https://scc.pku.edu.cn/" target="_blank" rel="noopener">北大就业信息网</a></li>
-        <li><span>更新时间</span><b id="aboutUpdated">—</b></li>
-        <li><span>当前收录</span><b id="aboutCount">—</b></li>
+        <li><span data-zh="数据来源" data-en="Data source">数据来源</span><a href="https://scc.pku.edu.cn/" target="_blank" rel="noopener" data-zh="北大就业信息网" data-en="PKU Career Center">北大就业信息网</a></li>
+        <li><span data-zh="更新时间" data-en="Updated">更新时间</span><b id="aboutUpdated">—</b></li>
+        <li><span data-zh="当前收录" data-en="Total listings">当前收录</span><b id="aboutCount">—</b></li>
       </ul>
-      <p class="panel-hint">非官方页面，由同学整理，信息请以就业网原文为准。发现遗漏或错误，欢迎直接改数据或提 issue。</p>
+      <p class="panel-hint" data-zh="非官方页面，由同学整理，信息请以就业网原文为准。发现遗漏或错误，欢迎直接改数据或提 issue。" data-en="Unofficial page maintained by students. Always check the original notice. Spotted an error? Feel free to fix the data or open an issue.">非官方页面，由同学整理，信息请以就业网原文为准。发现遗漏或错误，欢迎直接改数据或提 issue。</p>
+      <p class="panel-hint" data-zh="英文界面的公司名优先使用可确认的英文名；无法确认的保留中文原名。" data-en="Company names use official or commonly used English names where known; otherwise the original Chinese is kept.">英文界面的公司名优先使用可确认的英文名；无法确认的保留中文原名。</p>
     </section>
   </aside>
 </main>
 
 <footer class="footer">
   <div class="footer-inner">
-    <div class="footer-brand"><span class="seal seal-sm">燕</span><span>燕园求职日历</span></div>
-    <p>数据自动同步自 <a href="https://scc.pku.edu.cn/" target="_blank" rel="noopener">scc.pku.edu.cn</a> 的公开列表，仅供同学参考，不替代官方通知。</p>
+    <div class="footer-brand"><span class="seal seal-sm">燕</span><span data-zh="燕园求职日历" data-en="Yanyuan Career Calendar">燕园求职日历</span></div>
+    <p>
+      <span data-zh="数据自动同步自 " data-en="Data is automatically synced from ">数据自动同步自 </span><a href="https://scc.pku.edu.cn/" target="_blank" rel="noopener">scc.pku.edu.cn</a><span data-zh=" 的公开列表，仅供同学参考，不替代官方通知。" data-en=" public listings, for reference only. Always follow official notices."> 的公开列表，仅供同学参考，不替代官方通知。</span>
+    </p>
   </div>
 </footer>
 
@@ -194,29 +203,25 @@
   <div class="modal-backdrop" data-close="1"></div>
   <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="prefsTitle">
     <div class="modal-head">
-      <h3 id="prefsTitle">设置我的关注</h3>
-      <button class="icon-btn" type="button" data-close="1" aria-label="关闭">×</button>
+      <h3 id="prefsTitle" data-zh="设置我的关注" data-en="Set my interests">设置我的关注</h3>
+      <button class="icon-btn" type="button" data-close="1" data-zh-aria="关闭" data-en-aria="Close" aria-label="关闭">×</button>
     </div>
-    <p class="modal-desc">命中任意关键词或标签，就算「适合我的」。留空则不会过滤。</p>
+    <p class="modal-desc" data-zh="命中任意关键词，就算「适合我的」。留空则不会过滤。" data-en="Any matching keyword counts as “for me”. Leave blank to disable.">命中任意关键词，就算「适合我的」。留空则不会过滤。</p>
     <div class="field">
-      <span>快速套用方向</span>
+      <span data-zh="快速套用方向" data-en="Quick presets">快速套用方向</span>
       <div class="prefs-tags" id="prefsPresets"></div>
-      <small>点一下自动填入该方向的关键词和标签，保存前可继续调整。</small>
+      <small data-zh="点一下自动填入该方向的关键词，保存前可继续调整。" data-en="Fill in keywords for a direction; you can edit them before saving.">点一下自动填入该方向的关键词，保存前可继续调整。</small>
     </div>
     <label class="field">
-      <span>关键词</span>
-      <input id="kwInput" type="text" placeholder="用逗号分隔，如：算法, 产品经理, 国企, 北京" />
-      <small>会匹配职位标题、公司名、地点和标签。</small>
+      <span data-zh="关键词" data-en="Keywords">关键词</span>
+      <input id="kwInput" type="text" data-zh-placeholder="用逗号分隔，如：算法, 产品经理, 国企, 北京" data-en-placeholder="Comma-separated, e.g. algorithm, product manager, SOE, Beijing" placeholder="用逗号分隔，如：算法, 产品经理, 国企, 北京" />
+      <small data-zh="会匹配职位标题、公司名和地点。" data-en="Matches job titles, company names and locations.">会匹配职位标题、公司名和地点。</small>
     </label>
-    <div class="field">
-      <span>关注标签</span>
-      <div class="prefs-tags" id="prefsTags"></div>
-    </div>
     <div class="modal-actions">
-      <button class="link-btn" type="button" id="clearPrefs">清空</button>
+      <button class="link-btn" type="button" id="clearPrefs" data-zh="清空" data-en="Clear">清空</button>
       <div class="spacer"></div>
-      <button class="secondary-btn" type="button" data-close="1">取消</button>
-      <button class="primary-btn" type="button" id="savePrefs">保存</button>
+      <button class="secondary-btn" type="button" data-close="1" data-zh="取消" data-en="Cancel">取消</button>
+      <button class="primary-btn" type="button" id="savePrefs" data-zh="保存" data-en="Save">保存</button>
     </div>
   </div>
 </div>
@@ -225,20 +230,20 @@
   <div class="modal-backdrop" data-close="1"></div>
   <div class="modal-card agenda-card" role="dialog" aria-modal="true" aria-labelledby="agendaTitle">
     <div class="modal-head">
-      <h3 id="agendaTitle">我的日程</h3>
+      <h3 id="agendaTitle" data-zh="我的日程" data-en="My schedule">我的日程</h3>
       <span id="agendaConflictTop" class="agenda-conflict" hidden></span>
-      <button class="icon-btn" type="button" data-close="1" aria-label="关闭">×</button>
+      <button class="icon-btn" type="button" data-close="1" data-zh-aria="关闭" data-en-aria="Close" aria-label="关闭">×</button>
     </div>
-    <p class="modal-desc">点左侧任意一条查看详情；时间重叠或同日截止会在这里标出来。</p>
+    <p class="modal-desc" data-zh="点左侧任意一条查看详情；时间重叠或同日截止会在这里标出来。" data-en="Click an item on the left to see details; overlapping times or same-day deadlines are flagged here.">点左侧任意一条查看详情；时间重叠或同日截止会在这里标出来。</p>
     <div class="agenda-split">
       <div class="agenda-list" id="agendaList"></div>
       <div class="agenda-detail" id="agendaDetail"></div>
     </div>
     <div class="modal-actions">
-      <button class="link-btn" type="button" id="clearAgenda">清空日程</button>
+      <button class="link-btn" type="button" id="clearAgenda" data-zh="清空日程" data-en="Clear schedule">清空日程</button>
       <div class="spacer"></div>
-      <button class="secondary-btn" type="button" data-close="1">关闭</button>
-      <button class="primary-btn" type="button" id="agendaIcsBtn2">导出 .ics</button>
+      <button class="secondary-btn" type="button" data-close="1" data-zh="关闭" data-en="Close">关闭</button>
+      <button class="primary-btn" type="button" id="agendaIcsBtn2" data-zh="导出 .ics" data-en="Export .ics">导出 .ics</button>
     </div>
   </div>
 </div>
@@ -247,21 +252,22 @@
   <div class="modal-backdrop" data-close="1"></div>
   <div class="modal-card conflict-card" role="dialog" aria-modal="true" aria-labelledby="conflictTitle">
     <div class="modal-head">
-      <h3 id="conflictTitle">时间冲突</h3>
-      <button class="icon-btn" type="button" data-close="1" aria-label="关闭">×</button>
+      <h3 id="conflictTitle" data-zh="时间冲突" data-en="Time conflict">时间冲突</h3>
+      <button class="icon-btn" type="button" data-close="1" data-zh-aria="关闭" data-en-aria="Close" aria-label="关闭">×</button>
     </div>
     <p class="modal-desc" id="conflictDesc"></p>
     <div class="conflict-list" id="conflictList"></div>
     <div class="modal-actions">
       <div class="spacer"></div>
-      <button class="secondary-btn" type="button" data-close="1">取消</button>
-      <button class="primary-btn" type="button" id="conflictConfirm">仍然加入</button>
+      <button class="secondary-btn" type="button" data-close="1" data-zh="取消" data-en="Cancel">取消</button>
+      <button class="primary-btn" type="button" id="conflictConfirm" data-zh="仍然加入" data-en="Add anyway">仍然加入</button>
     </div>
   </div>
 </div>
 
 <div class="toast" id="toast" hidden></div>
 
+<script src="assets/company-en.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>

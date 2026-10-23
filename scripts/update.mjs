@@ -37,11 +37,19 @@ const FAIR_MAX_PAGES = FULL ? 20 : 3;
 const JOB_MAX_PAGES = FULL ? 40 : 4;
 const PAGE_SIZE = 50;
 
-// 保留窗口
-const FAIR_KEEP_PAST = 36 * HOUR; // 已开始的宣讲会保留半天
+// 过期清理
 const JOB_POSTED_WINDOW = 120 * DAY; // 只抓最近四个月发布的职位
-const JOB_KEEP_PAST = 36 * HOUR; // 截止时间过了半天的职位移除
-const JOB_NO_DEADLINE_KEEP = 45 * DAY;
+const JOB_NO_DEADLINE_KEEP = 45 * DAY; // 没有截止日期的职位最多保留 45 天
+
+function isFairAlive(item, now = NOW) {
+  if (!item.startMs) return false;
+  return (item.endMs || item.startMs) >= now;
+}
+
+function isJobAlive(item, now = NOW) {
+  if (item.endMs) return item.endMs >= now;
+  return Boolean(item.publishedMs) && item.publishedMs >= now - JOB_NO_DEADLINE_KEEP;
+}
 
 const FAIR_TYPES = [
   { value: 1, label: '宣讲会' },
@@ -206,7 +214,7 @@ async function crawlFairs(deep) {
       }
       const normalized = list
         .map((item) => normalizeFair(item, type.label))
-        .filter((item) => item.startMs && item.startMs >= NOW - FAIR_KEEP_PAST);
+        .filter((item) => isFairAlive(item));
       collected.push(...normalized);
 
       // 列表按举办时间倒序，翻到已经明显过期的数据就可以停
@@ -255,11 +263,7 @@ async function crawlJobs(deep) {
 }
 
 function isAlive(item) {
-  if (item.kind === 'fair') {
-    return item.startMs && item.startMs >= NOW - FAIR_KEEP_PAST;
-  }
-  if (item.endMs) return item.endMs >= NOW - JOB_KEEP_PAST;
-  return item.publishedMs && item.publishedMs >= NOW - JOB_NO_DEADLINE_KEEP;
+  return item.kind === 'fair' ? isFairAlive(item) : isJobAlive(item);
 }
 
 function mergeItems(oldItems, freshItems, initial) {
@@ -318,14 +322,16 @@ function serialize(meta, items) {
 /** 只给已有数据补算派生字段，不联网、不改同步时间 */
 async function enrichOnly() {
   const raw = JSON.parse(await fs.readFile(EVENTS_FILE, 'utf8'));
-  const items = (Array.isArray(raw.items) ? raw.items : []).map(enrichItem);
+  const before = (Array.isArray(raw.items) ? raw.items : []).map(enrichItem);
+  const items = before.filter(isAlive);
   const meta = { ...(raw.meta || {}), counts: countKinds(items), total: items.length };
   await fs.writeFile(EVENTS_FILE, serialize(meta, items), 'utf8');
   const withFn = items.filter((i) => i.functions?.length).length;
   const withCohort = items.filter((i) => i.cohort).length;
   const withCity = items.filter((i) => i.city).length;
   console.log(
-    `已补算 ${items.length} 条：职能 ${withFn} / 届别 ${withCohort} / 城市 ${withCity}`
+    `已补算 ${items.length} 条（移除过期 ${before.length - items.length} 条）：` +
+      `职能 ${withFn} / 届别 ${withCohort} / 城市 ${withCity}`
   );
 }
 
