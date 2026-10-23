@@ -186,7 +186,7 @@ ul { padding: 0; list-style: none; }
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
-.stat-note b { font-family: var(--sans); font-size: 15px; padding-top: 7px; }
+.stat-note b { font-family: var(--serif); white-space: nowrap; }
 
 /* ---------------- Toolbar ---------------- */
 
@@ -1290,6 +1290,7 @@ html[lang="en"] select { max-width: 190px; }
   .sidebar { position: static; order: -1; grid-template-columns: 1fr 1fr; }
   .panel-about { display: none; }
   .hero-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .stat { padding: 10px 12px; }
   .stat b { font-size: 22px; }
 
   .agenda-card { width: 100%; }
@@ -1315,7 +1316,6 @@ html[lang="en"] select { max-width: 190px; }
   .stat b { font-size: 20px; }
   .stat span { font-size: 10.5px; }
   .stat-sub { font-size: 9.5px; }
-  .stat-note b { font-size: 13px; padding-top: 5px; }
 
   .toolbar-inner { padding: 10px 16px 8px; gap: 8px; }
   .search-row { flex-direction: column; align-items: stretch; gap: 8px; }
