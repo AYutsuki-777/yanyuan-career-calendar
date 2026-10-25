@@ -1089,7 +1089,9 @@
     const [accent, accentSoft] = kindAccent(it);
     const title = esc(it.title);
     const companyText = it.company ? esc(companyLabel(it.company)) : '';
-    const companyTitle = it.company ? esc(it.company) : '';
+    const companyLinkTitle = it.company
+      ? esc(`${it.company} · ${L('打开原文详情', 'Open original listing')}`)
+      : '';
     const subtype = subtypeLabel(it);
     const fav = favs.has(it.id);
     const inAgenda = agenda.has(it.id);
@@ -1104,7 +1106,7 @@
           ${badges(it, score)}
           <a class="card-title" href="${esc(it.url)}" target="_blank" rel="noopener">${title}</a>
         </div>
-        ${companyText ? `<div class="card-company" title="${companyTitle}">${companyText}</div>` : ''}
+        ${companyText ? `<a class="card-company" href="${esc(it.url)}" target="_blank" rel="noopener" title="${companyLinkTitle}"><span>${companyText}</span>${icon('external')}</a>` : ''}
         <div class="card-meta">${metaRows(it)}</div>
       </div>
       <div class="card-side">
@@ -1660,9 +1662,9 @@
       <h4>${esc(it.title)}</h4>
       ${
         it.company
-          ? `<div class="ad-company" title="${esc(it.company)}">${esc(
-              companyLabel(it.company)
-            )}</div>`
+          ? `<a class="ad-company" href="${esc(it.url)}" target="_blank" rel="noopener" title="${esc(
+              `${it.company} · ${L('打开原文详情', 'Open original listing')}`
+            )}">${esc(companyLabel(it.company))}${icon('external')}</a>`
           : ''
       }
       <dl class="ad-meta">
