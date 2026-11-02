@@ -1,17 +1,17 @@
 {
   "meta": {
-  "generatedAt": "2026-11-02T00:34:49.635Z",
-  "generatedAtCst": "2026-11-02 08:34",
+  "generatedAt": "2026-11-02T06:58:27.559Z",
+  "generatedAtCst": "2026-11-02 14:58",
   "source": "https://scc.pku.edu.cn",
   "sourceName": "北京大学学生就业指导服务中心",
   "note": "非官方页面，数据自动同步自就业网公开列表，请以原文为准。",
   "firstRun": false,
   "counts": {
-    "fair": 24,
+    "fair": 23,
     "job": 1711,
     "internship": 84
   },
-  "total": 1819
+  "total": 1818
 },
   "items": [
     {"id":"job:60c60f9a9a6a4fc5ab5cdc27d8d21cc0","kind":"internship","subtype":"实习","title":"北京燕园动力资本管理有限公司2026年投资实习生招聘","company":"北京燕园动力资本管理有限公司","startMs":1781054688000,"endMs":1812384000000,"publishedMs":1781054688000,"location":"","nature":"其他企业(含民营企业等)","scale":"","positions":2,"views":0,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentinfo/show?recruitmentId=60c60f9a9a6a4fc5ab5cdc27d8d21cc0","tags":["金融/银行","实习"],"functions":[],"cohort":2026,"city":"北京"},
@@ -1809,7 +1809,6 @@
     {"id":"job:7deb65593565461c8d6da421da7fe709","kind":"job","subtype":"招聘","title":"江苏省宿迁学院2027校园招聘","company":"江苏省宿迁学院","startMs":1793262642000,"endMs":1808928000000,"publishedMs":1793262642000,"location":"","nature":"高等教育单位","scale":"500-1000人","positions":0,"functions":[],"cohort":2027,"city":"","views":0,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentinfo/show?recruitmentId=7deb65593565461c8d6da421da7fe709","tags":["教育/科研"],"firstSeen":"2026-10-29T12:33:09.220Z"},
     {"id":"job:38b9a650204e4e978a60cd401ddf4847","kind":"job","subtype":"招聘","title":"黄河水利职业技术大学2027校园招聘","company":"黄河水利职业技术大学","startMs":1793262723000,"endMs":1808928000000,"publishedMs":1793262723000,"location":"","nature":"高等教育单位","scale":"500-1000人","positions":0,"functions":[],"cohort":2027,"city":"","views":0,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentinfo/show?recruitmentId=38b9a650204e4e978a60cd401ddf4847","tags":["教育/科研"],"firstSeen":"2026-10-29T12:33:09.220Z"},
     {"id":"job:8ed623fa8e0d4b929a391dd5cab84e6e","kind":"job","subtype":"招聘","title":"肇庆学院2027校园招聘","company":"肇庆学院","startMs":1793262820000,"endMs":1808928000000,"publishedMs":1793262820000,"location":"","nature":"高等教育单位","scale":"500-1000人","positions":0,"functions":[],"cohort":2027,"city":"","views":0,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentinfo/show?recruitmentId=8ed623fa8e0d4b929a391dd5cab84e6e","tags":["教育/科研"],"firstSeen":"2026-10-29T12:33:09.220Z"},
-    {"id":"fair:cae4844e69f445e19fbd8183a3c6d696","kind":"fair","subtype":"宣讲会","title":"成都康弘药业集团股份有限公司2027年校园宣讲会","company":"北京康弘生物医药有限公司","startMs":1793583000000,"endMs":1793590200000,"publishedMs":null,"location":"新太阳学生中心212室","nature":"","scale":"","positions":0,"views":458,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentFair/show?recruitmentFairId=cae4844e69f445e19fbd8183a3c6d696","tags":["医疗/生物","宣讲"],"functions":[],"cohort":2027,"city":"北京"},
     {"id":"fair:37e69879445e4288b00577c36e8a6b5d","kind":"fair","subtype":"宣讲会","title":"波司登2027届校园招聘宣讲会","company":"前锦网络信息技术（上海）有限公司北京分公司","startMs":1793599200000,"endMs":1793606400000,"publishedMs":null,"location":"英杰阳光厅","nature":"","scale":"","positions":0,"functions":[],"cohort":2027,"city":"北京","views":157,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentFair/show?recruitmentFairId=37e69879445e4288b00577c36e8a6b5d","tags":["互联网/科技","校招","宣讲"],"firstSeen":"2026-10-27T06:27:03.691Z"},
     {"id":"fair:6d4b2f1be31c4155805e2ae84cedecaf","kind":"fair","subtype":"宣讲会","title":"中国北方工业有限公司2026年校园宣讲会","company":"中国北方工业有限公司","startMs":1793599200000,"endMs":1793606400000,"publishedMs":null,"location":"英杰交流中心第二会议室","nature":"","scale":"","positions":0,"functions":[],"cohort":2026,"city":"","views":34,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentFair/show?recruitmentFairId=6d4b2f1be31c4155805e2ae84cedecaf","tags":["宣讲"],"firstSeen":"2026-11-01T12:30:12.464Z"},
     {"id":"fair:1693bbdcba344e5f9b0a51639dc9372e","kind":"fair","subtype":"宣讲会","title":"上海市公安局2026年校园宣讲会","company":"上海市公安局","startMs":1793617200000,"endMs":1793624400000,"publishedMs":null,"location":"英杰交流中心第二会议室","nature":"","scale":"","positions":0,"functions":[],"cohort":2026,"city":"上海","views":310,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentFair/show?recruitmentFairId=1693bbdcba344e5f9b0a51639dc9372e","tags":["宣讲"],"firstSeen":"2026-10-23T12:18:35.681Z"},
