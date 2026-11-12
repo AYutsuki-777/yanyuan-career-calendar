@@ -1,17 +1,17 @@
 {
   "meta": {
-  "generatedAt": "2026-11-12T06:55:27.456Z",
-  "generatedAtCst": "2026-11-12 14:55",
+  "generatedAt": "2026-11-12T12:51:24.441Z",
+  "generatedAtCst": "2026-11-12 20:51",
   "source": "https://scc.pku.edu.cn",
   "sourceName": "北京大学学生就业指导服务中心",
   "note": "非官方页面，数据自动同步自就业网公开列表，请以原文为准。",
   "firstRun": false,
   "counts": {
-    "fair": 12,
+    "fair": 10,
     "job": 1855,
     "internship": 93
   },
-  "total": 1960
+  "total": 1958
 },
   "items": [
     {"id":"job:60c60f9a9a6a4fc5ab5cdc27d8d21cc0","kind":"internship","subtype":"实习","title":"北京燕园动力资本管理有限公司2026年投资实习生招聘","company":"北京燕园动力资本管理有限公司","startMs":1781054688000,"endMs":1812384000000,"publishedMs":1781054688000,"location":"","nature":"其他企业(含民营企业等)","scale":"","positions":2,"views":0,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentinfo/show?recruitmentId=60c60f9a9a6a4fc5ab5cdc27d8d21cc0","tags":["金融/银行","实习"],"functions":[],"cohort":2026,"city":"北京"},
@@ -1962,8 +1962,6 @@
     {"id":"job:4eb9cde3f05b4aa4ba670a6e2242383c","kind":"job","subtype":"招聘","title":"费米宇宙（北京）科技有限公司2027年校园招聘","company":"费米宇宙（北京）科技有限公司","startMs":1794447526000,"endMs":1809878400000,"publishedMs":1794447526000,"location":"","nature":"其他企业(含民营企业等)","scale":"10人-50人","positions":2,"functions":[],"cohort":2027,"city":"北京","views":0,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentinfo/show?recruitmentId=4eb9cde3f05b4aa4ba670a6e2242383c","tags":[],"firstSeen":"2026-11-12T06:55:27.456Z"},
     {"id":"job:505aec88184f4f0ba1f673423180ebd2","kind":"job","subtype":"招聘","title":"四川农商银行2027年省行校园招聘","company":"北京网聘咨询有限公司","startMs":1794447716000,"endMs":1795881600000,"publishedMs":1794447716000,"location":"","nature":"其他(含社会组织、国际组织等)","scale":"500-1000人","positions":60,"functions":[],"cohort":2027,"city":"北京","views":0,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentinfo/show?recruitmentId=505aec88184f4f0ba1f673423180ebd2","tags":["金融/银行","咨询/专业服务"],"firstSeen":"2026-11-12T06:55:27.456Z"},
     {"id":"job:49275953ff2d41fe8656438b08f55649","kind":"job","subtype":"招聘","title":"北京国际工程咨询有限公司2027年校园招聘","company":"北京国际工程咨询有限公司","startMs":1794447854000,"endMs":1801152000000,"publishedMs":1794447854000,"location":"","nature":"其他企业(含民营企业等)","scale":"200人-500人","positions":2,"functions":[],"cohort":2027,"city":"北京","views":0,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentinfo/show?recruitmentId=49275953ff2d41fe8656438b08f55649","tags":["咨询/专业服务"],"firstSeen":"2026-11-12T06:55:27.456Z"},
-    {"id":"fair:7b014486e28249f39ac191788c7d5d03","kind":"fair","subtype":"宣讲会","title":"上海机场(集团)有限公司2027年度校园招聘","company":"上海机场（集团）有限公司","startMs":1794463200000,"endMs":1794470400000,"publishedMs":null,"location":"新太阳学生中心212室","nature":"","scale":"","positions":0,"functions":[],"cohort":2027,"city":"上海","views":749,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentFair/show?recruitmentFairId=7b014486e28249f39ac191788c7d5d03","tags":[],"firstSeen":"2026-10-23T12:18:35.681Z"},
-    {"id":"fair:b24d3d1a4a8449f98c2eb4104c40af51","kind":"fair","subtype":"宣讲会","title":"2026年南京市“四对接”活动-百万青年聚金陵·百校巡回招引（北京大学专场）","company":"北京网聘咨询有限公司","startMs":1794465000000,"endMs":1794474000000,"publishedMs":null,"location":"百周年纪念讲堂","nature":"","scale":"","positions":0,"functions":[],"cohort":2026,"city":"北京","views":457,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentFair/show?recruitmentFairId=b24d3d1a4a8449f98c2eb4104c40af51","tags":["教育/科研","咨询/专业服务"],"firstSeen":"2026-11-06T18:39:37.812Z"},
     {"id":"fair:da971b233ce64b25b7306607c6ef1ea5","kind":"fair","subtype":"宣讲会","title":"紫金山实验室2027届校园招聘宣讲会","company":"北京网聘咨询有限公司","startMs":1794481200000,"endMs":1794488400000,"publishedMs":null,"location":"新太阳学生中心212室","nature":"","scale":"","positions":0,"functions":[],"cohort":2027,"city":"北京","views":96,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentFair/show?recruitmentFairId=da971b233ce64b25b7306607c6ef1ea5","tags":["教育/科研","咨询/专业服务","校招","宣讲"],"firstSeen":"2026-11-10T12:48:05.002Z"},
     {"id":"fair:17b43b095f104100a0800a81b8f8fa25","kind":"fair","subtype":"宣讲会","title":"“志同到合 才聚江淮” 2026年秋季“合肥千企万岗请您来” ——北京大学站","company":"武汉优加壹人力资源服务有限公司","startMs":1794533400000,"endMs":1794540600000,"publishedMs":null,"location":"英杰阳光厅","nature":"","scale":"","positions":0,"functions":[],"cohort":2026,"city":"武汉","views":332,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentFair/show?recruitmentFairId=17b43b095f104100a0800a81b8f8fa25","tags":["教育/科研","咨询/专业服务"],"firstSeen":"2026-11-06T18:39:37.812Z"},
     {"id":"fair:4b8165e9230b41b5a86f3b87daeae10b","kind":"fair","subtype":"宣讲会","title":"“疆遇良才 才聚天山”2027年度新疆维吾尔自治区 新疆生产建设兵团选调招聘宣介会","company":"北京大学学生就业指导服务中心","startMs":1794535200000,"endMs":1794542400000,"publishedMs":null,"location":"百周年纪念讲堂202会议室","nature":"","scale":"","positions":0,"functions":[],"cohort":2027,"city":"北京","views":79,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentFair/show?recruitmentFairId=4b8165e9230b41b5a86f3b87daeae10b","tags":["教育/科研","体制内"],"firstSeen":"2026-11-10T12:48:05.002Z"},
