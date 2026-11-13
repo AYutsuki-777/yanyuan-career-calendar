@@ -1,17 +1,17 @@
 {
   "meta": {
-  "generatedAt": "2026-11-13T12:49:24.822Z",
-  "generatedAtCst": "2026-11-13 20:49",
+  "generatedAt": "2026-11-13T18:38:55.773Z",
+  "generatedAtCst": "2026-11-14 02:38",
   "source": "https://scc.pku.edu.cn",
   "sourceName": "北京大学学生就业指导服务中心",
   "note": "非官方页面，数据自动同步自就业网公开列表，请以原文为准。",
   "firstRun": false,
   "counts": {
     "fair": 7,
-    "job": 1891,
+    "job": 1890,
     "internship": 93
   },
-  "total": 1991
+  "total": 1990
 },
   "items": [
     {"id":"job:60c60f9a9a6a4fc5ab5cdc27d8d21cc0","kind":"internship","subtype":"实习","title":"北京燕园动力资本管理有限公司2026年投资实习生招聘","company":"北京燕园动力资本管理有限公司","startMs":1781054688000,"endMs":1812384000000,"publishedMs":1781054688000,"location":"","nature":"其他企业(含民营企业等)","scale":"","positions":2,"views":0,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentinfo/show?recruitmentId=60c60f9a9a6a4fc5ab5cdc27d8d21cc0","tags":["金融/银行","实习"],"functions":[],"cohort":2026,"city":"北京"},
@@ -1317,7 +1317,6 @@
     {"id":"job:cbcd830be2db410189207cc3b381b878","kind":"job","subtype":"招聘","title":"中国石油勘探开发研究院西北分院 ——2027届研究生校园招聘","company":"中国石油天然气股份有限公司勘探开发研究院西北分院","startMs":1791438541000,"endMs":1798646400000,"publishedMs":1791438541000,"location":"","nature":"国有企业","scale":"500-1000人","positions":2,"views":0,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentinfo/show?recruitmentId=cbcd830be2db410189207cc3b381b878","tags":["国企/事业单位","校招","硕士"],"functions":[],"cohort":2027,"city":""},
     {"id":"job:9600e64688de4df0a8b6853e0423105c","kind":"job","subtype":"招聘","title":"华润啤酒2027届管培生招聘简章","company":"华润雪花啤酒（中国）投资有限公司","startMs":1791438726000,"endMs":1803744000000,"publishedMs":1791438726000,"location":"","nature":"外商投资企业","scale":"500-1000人","positions":3,"views":0,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentinfo/show?recruitmentId=9600e64688de4df0a8b6853e0423105c","tags":["校招","管培生"],"functions":["管培生"],"cohort":2027,"city":""},
     {"id":"job:a57916f71b524445b28d5443ce879f62","kind":"job","subtype":"招聘","title":"崂山国家实验室2026年校园招聘","company":"崂山国家实验室","startMs":1791438841000,"endMs":1795968000000,"publishedMs":1791438841000,"location":"","nature":"其他事业单位","scale":"500-1000人","positions":50,"views":0,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentinfo/show?recruitmentId=a57916f71b524445b28d5443ce879f62","tags":["教育/科研"],"functions":[],"cohort":2026,"city":""},
-    {"id":"job:d63e321b0b9e42c7aa618b1b184874a4","kind":"job","subtype":"招聘","title":"广州高才信息科技有限公司2026年秋季博士出站博士后招聘","company":"广州高才信息科技有限公司","startMs":1791438986000,"endMs":1794585600000,"publishedMs":1791438986000,"location":"","nature":"其他企业(含民营企业等)","scale":"100人-200人","positions":100,"views":0,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentinfo/show?recruitmentId=d63e321b0b9e42c7aa618b1b184874a4","tags":["博士","博士后"],"functions":[],"cohort":2026,"city":"广州"},
     {"id":"job:e764b280b5ea498ba0adbe70c847becf","kind":"job","subtype":"招聘","title":"锐捷网络2027届校园招聘","company":"锐捷网络股份有限公司","startMs":1791439713000,"endMs":1811692800000,"publishedMs":1791439713000,"location":"","nature":"其他企业(含民营企业等)","scale":"500-1000人","positions":74,"views":0,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentinfo/show?recruitmentId=e764b280b5ea498ba0adbe70c847becf","tags":["校招"],"functions":[],"cohort":2027,"city":""},
     {"id":"job:beb32d1de89347fcad685029c68b9062","kind":"job","subtype":"招聘","title":"韦立国际集团2027年韦业生管培生宣讲会","company":"青岛韦立航运有限公司","startMs":1791439768000,"endMs":1806940800000,"publishedMs":1791439768000,"location":"","nature":"其他企业(含民营企业等)","scale":"1000人以上","positions":1,"views":0,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentinfo/show?recruitmentId=beb32d1de89347fcad685029c68b9062","tags":["管培生","宣讲"],"functions":["管培生"],"cohort":2027,"city":"青岛"},
     {"id":"job:9d50224cad134c2dac6ae2c69f202523","kind":"job","subtype":"招聘","title":"湖北星辰技术有限公司2026年校园招聘","company":"湖北星辰技术有限公司","startMs":1791439793000,"endMs":1806940800000,"publishedMs":1791439793000,"location":"","nature":"其他企业(含民营企业等)","scale":"500-1000人","positions":37,"views":0,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentinfo/show?recruitmentId=9d50224cad134c2dac6ae2c69f202523","tags":[],"functions":[],"cohort":2026,"city":""},
