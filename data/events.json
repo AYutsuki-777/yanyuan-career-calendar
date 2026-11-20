@@ -1,17 +1,17 @@
 {
   "meta": {
-  "generatedAt": "2026-11-20T06:56:08.034Z",
-  "generatedAtCst": "2026-11-20 14:56",
+  "generatedAt": "2026-11-20T12:52:09.849Z",
+  "generatedAtCst": "2026-11-20 20:52",
   "source": "https://scc.pku.edu.cn",
   "sourceName": "北京大学学生就业指导服务中心",
   "note": "非官方页面，数据自动同步自就业网公开列表，请以原文为准。",
   "firstRun": false,
   "counts": {
-    "fair": 7,
+    "fair": 5,
     "job": 1934,
     "internship": 95
   },
-  "total": 2036
+  "total": 2034
 },
   "items": [
     {"id":"job:60c60f9a9a6a4fc5ab5cdc27d8d21cc0","kind":"internship","subtype":"实习","title":"北京燕园动力资本管理有限公司2026年投资实习生招聘","company":"北京燕园动力资本管理有限公司","startMs":1781054688000,"endMs":1812384000000,"publishedMs":1781054688000,"location":"","nature":"其他企业(含民营企业等)","scale":"","positions":2,"views":0,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentinfo/show?recruitmentId=60c60f9a9a6a4fc5ab5cdc27d8d21cc0","tags":["金融/银行","实习"],"functions":[],"cohort":2026,"city":"北京"},
@@ -2043,8 +2043,6 @@
     {"id":"job:0e2932ef48eb4fc3a46f5f758d77b3d3","kind":"job","subtype":"招聘","title":"影石创新科技股份有限公司2027年校园招聘","company":"影石创新科技股份有限公司","startMs":1795126228000,"endMs":1810742400000,"publishedMs":1795126228000,"location":"","nature":"其他企业(含民营企业等)","scale":"500-1000人","positions":0,"functions":[],"cohort":2027,"city":"","views":0,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentinfo/show?recruitmentId=0e2932ef48eb4fc3a46f5f758d77b3d3","tags":[],"firstSeen":"2026-11-20T06:56:08.034Z"},
     {"id":"job:933b7c0aa78a4fe7ae561708841e8159","kind":"job","subtype":"招聘","title":"鲁东大学2026年公开招聘优秀博士人才人员公告","company":"鲁东大学","startMs":1795126323000,"endMs":1798646400000,"publishedMs":1795126323000,"location":"","nature":"高等教育单位","scale":"500-1000人","positions":0,"functions":[],"cohort":2026,"city":"","views":0,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentinfo/show?recruitmentId=933b7c0aa78a4fe7ae561708841e8159","tags":["教育/科研","博士"],"firstSeen":"2026-11-20T06:56:08.034Z"},
     {"id":"job:5ceffd225c464906ad201a6ab81a2bde","kind":"job","subtype":"招聘","title":"中国网安/三十所2027届校园招聘","company":"中国网安/三十所","startMs":1795126440000,"endMs":1810742400000,"publishedMs":1795126440000,"location":"","nature":"国有企业","scale":"500-1000人","positions":0,"functions":[],"cohort":2027,"city":"","views":0,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentinfo/show?recruitmentId=5ceffd225c464906ad201a6ab81a2bde","tags":["校招"],"firstSeen":"2026-11-20T06:56:08.034Z"},
-    {"id":"fair:1348fcf26a294e44bc0fb708e795f879","kind":"fair","subtype":"宣讲会","title":"厦门翔业集团有限公司2027年校园招聘","company":"厦门翔业集团有限公司","startMs":1795154400000,"endMs":1795161600000,"publishedMs":null,"location":"英杰交流中心第四会议室","nature":"","scale":"","positions":0,"functions":[],"cohort":2027,"city":"厦门","views":257,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentFair/show?recruitmentFairId=1348fcf26a294e44bc0fb708e795f879","tags":[],"firstSeen":"2026-11-14T06:42:30.892Z"},
-    {"id":"fair:80364fe4e2c848b79a50fb9b642df0b9","kind":"fair","subtype":"宣讲会","title":"国家数据集团2027秋季校园招聘-北京大学专场宣讲","company":"国家数据集团有限公司","startMs":1795156200000,"endMs":1795163400000,"publishedMs":null,"location":"英杰阳光厅","nature":"","scale":"","positions":0,"functions":[],"cohort":2027,"city":"北京","views":1193,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentFair/show?recruitmentFairId=80364fe4e2c848b79a50fb9b642df0b9","tags":["互联网/科技","教育/科研","宣讲"],"firstSeen":"2026-11-06T18:39:37.812Z"},
     {"id":"fair:89fc2e5578eb47b7af68bdaed9da0483","kind":"fair","subtype":"宣讲会","title":"成都微光集电科技有限公司2026年秋季校园招聘简章","company":"成都微光集电科技有限公司","startMs":1795413600000,"endMs":1795420800000,"publishedMs":null,"location":"新太阳学生中心212室","nature":"","scale":"","positions":0,"functions":[],"cohort":2026,"city":"成都","views":248,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentFair/show?recruitmentFairId=89fc2e5578eb47b7af68bdaed9da0483","tags":[],"firstSeen":"2026-11-14T06:42:30.892Z"},
     {"id":"fair:6217c324238c456c830a63b224092a17","kind":"fair","subtype":"宣讲会","title":"北京无限镜元科技有限公司2026年校园宣讲会","company":"北京无限镜元科技有限公司","startMs":1795672800000,"endMs":1795680000000,"publishedMs":null,"location":"新太阳学生中心212室","nature":"","scale":"","positions":0,"functions":[],"cohort":2026,"city":"北京","views":134,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentFair/show?recruitmentFairId=6217c324238c456c830a63b224092a17","tags":["宣讲"],"firstSeen":"2026-11-18T12:53:36.839Z"},
     {"id":"fair:7145b089a4b74c7aba5eca1670bb693a","kind":"fair","subtype":"宣讲会","title":"公安部第一研究所2027年公开招聘预报名宣讲会","company":"公安部第一研究所","startMs":1795690800000,"endMs":1795698000000,"publishedMs":null,"location":"英杰交流中心第四会议室","nature":"","scale":"","positions":0,"functions":[],"cohort":2027,"city":"","views":38,"top":false,"url":"https://scc.pku.edu.cn/f/recruitmentFair/show?recruitmentFairId=7145b089a4b74c7aba5eca1670bb693a","tags":["教育/科研","宣讲"],"firstSeen":"2026-11-19T18:47:09.204Z"},
